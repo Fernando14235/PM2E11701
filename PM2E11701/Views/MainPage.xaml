@@ -41,7 +41,9 @@
             <Button
                 x:Name="btnAgregar"
                 Margin="0,10,0,0"
-                Background="#00532c" TextColor="White" FontAttributes="Bold"
+                Background="#f6ee00" 
+                TextColor="Black" 
+                FontAttributes="Bold"
                 WidthRequest="120"
                 HeightRequest="45"
                 Clicked="btnAgregar_Clicked"
@@ -66,6 +68,7 @@
                 FontAttributes="Bold"
                 FontSize="Body"
                 IsEnabled="False"
+                IsReadOnly="True"
                 HorizontalOptions="Center"
                 Keyboard="Text"
                 VerticalOptions="Center" />
@@ -74,82 +77,90 @@
 
 
             <Label
-            Margin="0,0,0,10"
-            TextColor="Black"
-            FontAttributes="Bold"
-            FontSize="Body"
-            HorizontalOptions="Start"
-            Text="Longitud:"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" />
+                Margin="0,0,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                Text="Longitud:"
+                SemanticProperties.HeadingLevel="Level1"
+                VerticalOptions="Center" />
 
             <Entry
-            x:Name="txtLongitud"
-            Margin="-85,-70,0,10"
-            TextColor="Black"
-            FontAttributes="Bold"
-            FontSize="16"
-            IsEnabled="False"
-            HorizontalOptions="Center"
-            Keyboard="Text"
-            VerticalOptions="Start" />
+                x:Name="txtLongitud"
+                Margin="-85,-70,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="16"
+                IsEnabled="False"
+                IsReadOnly="True"
+                HorizontalOptions="Center"
+                Keyboard="Text"
+                VerticalOptions="Start" />
 
             <Label
-            Margin="0,0,0,10"
-            TextColor="Black"
-            FontAttributes="Bold"
-            FontSize="Body"
-            HorizontalOptions="Start"
-            Text="Descripcion:"
-            VerticalOptions="Center" />
+                Margin="0,0,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                Text="Descripcion:"
+                VerticalOptions="Center" />
 
             <Entry
-            x:Name="txtDescrip"
-            Margin="-25,-30,20,20"
-            TextColor="Black"
-            FontAttributes="Bold"
-            FontSize="Body"
-            HorizontalOptions="Center"
-            Keyboard="Text"
-            IsEnabled="False"
-            Placeholder="Ingrese la Ciudad"
-            VerticalOptions="StartAndExpand" />
+                x:Name="txtDescrip"
+                Margin="-25,-30,20,20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Center"
+                IsEnabled="False"
+                IsReadOnly="True"
+                Keyboard="Text"
+                Placeholder="Ingrese la Ciudad Aqui"
+                VerticalOptions="StartAndExpand" />
 
 
             <Button
-            x:Name="btnGuardar"
-            Margin="0,30,0,0"
-            Background="#00532c" TextColor="White" FontAttributes="Bold"
-            WidthRequest="200"
-            HeightRequest="50"
-            Clicked="btnGuardar_Clicked"
-            HorizontalOptions="Center"
-            SemanticProperties.Hint="Agregar"
-            Text="Guardar" />
-            
-            
+                x:Name="btnGuardar"
+                Margin="0,0,0,0"
+                Background="#71e84d" 
+                TextColor="Black" 
+                FontAttributes="Bold"
+                WidthRequest="120"
+                HeightRequest="50"
+                Clicked="btnGuardar_Clicked"
+                HorizontalOptions="Start"
+                SemanticProperties.Hint="Agregar"
+                Text="Guardar" />
+
+
 
             <Button
-            x:Name="btnLista"
-            Margin="0,50,0,10"
-            Background="#00532c" TextColor="White" FontAttributes="Bold"
-            WidthRequest="200"
-            HeightRequest="50"
-            Clicked="btnLista_Clicked"
-            HorizontalOptions="Center"
-            SemanticProperties.Hint="Lista"
-            Text="Lista" />
+                x:Name="btnLista"
+                Margin="0,-69.5,40,0"
+                Background="#2ff4e0" 
+                TextColor="Black" 
+                FontAttributes="Bold"
+                WidthRequest="120"
+                HeightRequest="50"
+                Clicked="btnLista_Clicked"
+                HorizontalOptions="End"
+                SemanticProperties.Hint="Lista"
+                Text="Lista" />
 
             <Button
-             x:Name="btnSalir"
-             Margin="0,0,0,10"
-             Background="#00532c" TextColor="White" FontAttributes="Bold"
-             WidthRequest="200"
-             HeightRequest="50"
-             Clicked="btnSalir_Clicked"
-             HorizontalOptions="Center"
-             SemanticProperties.Hint="Salir de la Aplicacion"
-             Text="SALIR APP" />
+                 x:Name="btnSalir"
+                 Margin="0,0,0,10"
+                 Background="#ff4242" 
+                TextColor="White" 
+                FontAttributes="Bold"
+                 WidthRequest="200"
+                 HeightRequest="50"
+                 Clicked="btnSalir_Clicked"
+                 HorizontalOptions="Center"
+                 SemanticProperties.Hint="Salir de la Aplicacion"
+                 Text="SALIR APP" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

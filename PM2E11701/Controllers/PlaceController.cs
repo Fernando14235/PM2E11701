@@ -40,17 +40,19 @@ namespace PM2E11701.Controllers
             }
         }
 
+
+        //Crear metodos crud para la clase personas
         //Create
-        public async Task<int> storePlace(Place autor)
+        public async Task<int> storePlace(Place place)
         {
             await Init();
-            if (autor.Id == 0)
+            if (place.Id == 0)
             {
-                return await _connection.InsertAsync(autor);
+                return await _connection.InsertAsync(place);
             }
             else
             {
-                return await _connection.UpdateAsync(autor);
+                return await _connection.UpdateAsync(place);
             }
         }
 
@@ -69,17 +71,17 @@ namespace PM2E11701.Controllers
         }
 
         //Read Element
-        public async Task<Models.Place> getPlaces(int pid)
+        public async Task<Models.Place> getPlace(int pid)
         {
             await Init();
             return await _connection.Table<Place>().Where(i => i.Id == pid).FirstOrDefaultAsync();
         }
 
         //Delete
-        public async Task<int> deletePlace(int autorID)
+        public async Task<int> deletePlace(int placeID)
         {
             await Init();
-            var placeToDelete = await getPlaces(autorID);
+            var placeToDelete = await getPlace(placeID);
 
             if (placeToDelete != null)
             {

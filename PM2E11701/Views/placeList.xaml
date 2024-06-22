@@ -2,26 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PM2E11701.Views.placeList"
-             Title="">
+             xmlns:convert="clr-namespace:PM2E11701.Controllers"
+             Title="Places List">
+    
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
 
 
-
-
+    
     <ScrollView>
         <StackLayout>
             <Frame
             Grid.Column="1"
             Margin="20,20,20,0"
             BorderColor="Black"
-            BackgroundColor="#bca858"
+            BackgroundColor="White"
             CornerRadius="50"
             Padding="0">
+                
                 <SearchBar
                 x:Name="searchBar"
                 Margin="0,0,0,0"
                 TextColor="Black"
                 FontAttributes="Bold"
-                Background="#bca858"
+                Background="#2ff4e0"
                 Placeholder="Buscar Lugares"
                 PlaceholderColor="Black"
                 SearchButtonPressed="searchBar_SearchButtonPressed"
@@ -41,7 +46,7 @@
                          Grid.Column="1"
                          Margin="20,20,20,0"
                          BorderColor="Black"
-                         BackgroundColor="#bca858"
+                         BackgroundColor="#e96582"
                          CornerRadius="25"
                          Padding="0">
 
@@ -50,16 +55,22 @@
                                     <SwipeItems>
                                         <SwipeItem
                                         Text="ELIMINAR"
-                                        BackgroundColor="#fd3333"
+                                        BackgroundColor="#ff4242"
                                         Command="{Binding BindingContext.DeleteCommand, Source={x:Reference collectionView}}"
                                         CommandParameter="{Binding .}" 
-                                        Clicked="EliminarLugar_Clicked"/>
+                                        Clicked="DeletePlace_Clicked"/>
                                         <SwipeItem
                                         Text="ACTUALIZAR" 
-                                        BackgroundColor="#60bd37"
+                                        BackgroundColor="#71e84d"
                                         Command="{Binding BindingContext.UpdateCommand, Source={x:Reference collectionView}}"
                                         CommandParameter="{Binding .}" 
-                                        Clicked="ActualizarLugar_Clicked"/>
+                                        Clicked="UpdatePlace_Clicked"/>
+                                        <SwipeItem
+                                            Text="MAPA" 
+                                            BackgroundColor="#f9daa1"
+                                            Command="{Binding BindingContext.UpdateCommand, Source={x:Reference collectionView}}"
+                                            CommandParameter="{Binding .}" 
+                                            Clicked="Map_Clicked"/>
                                     </SwipeItems>
                                 </SwipeView.RightItems>
 
@@ -67,7 +78,7 @@
                                 Grid.Column="1"
                                 Margin="0,0,0,0"
                                 BorderColor="Black"
-                                BackgroundColor="#bca858"
+                                BackgroundColor="#2ff4e0"
                                 CornerRadius="25"
                                 Padding="0">
                                     <Grid>
@@ -104,24 +115,41 @@
                                             WidthRequest="100" />
                                         </Frame>
 
-                                        <Label
-                                        Grid.Column="2"
-                                        Margin="10,0,10,10"
-                                        TextColor="Black"
-                                        FontAttributes="Bold"
-                                        HorizontalOptions="Center"
-                                        Text="{Binding Nombres}"
-                                        VerticalOptions="CenterAndExpand" />
+                                        <StackLayout
+                                            Grid.Column="3"
+                                            VerticalOptions="Center"
+                                            Margin="20,0,0,0">
 
-                                        <Label
-                                        Grid.Column="3"
-                                        Margin="0,0,20,10"
-                                        TextColor="Black"
-                                        FontAttributes="Bold"
-                                        HorizontalOptions="Center"
-                                        Text="{Binding Nacionalidad, StringFormat='({0})'}"
-                                        VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Column="2"
+                                                Margin="0,0,0,0"
+                                                TextColor="Black"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding Descripcion}"
+                                                VerticalOptions="CenterAndExpand" />
+
+                                            <Label
+                                                Grid.Column="3"
+                                                Margin="0,5,0,0"
+                                                TextColor="Black"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding Longitud, StringFormat='Longitud: ({0})'}"
+                                                VerticalOptions="CenterAndExpand" />
+
+                                            <Label
+                                                Grid.Column="4"
+                                                Margin="0,5,0,0"
+                                                TextColor="Black"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding Latitud, StringFormat='Latitud: ({0})'}"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+
                                     </Grid>
+
                                 </Frame>
 
 
@@ -137,8 +165,8 @@
             <Button
             x:Name="btnRegresar"
             Margin="0,30,0,20"
-            Background="#00532c"
-            TextColor="White"
+            Background="#2ff4e0"
+            TextColor="Black"
             FontAttributes="Bold"
             WidthRequest="200"
             HeightRequest="50"

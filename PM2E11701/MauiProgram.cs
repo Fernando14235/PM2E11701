@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Maps.Handlers;
 
 namespace PM2E11701
 {
@@ -9,6 +10,11 @@ namespace PM2E11701
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .ConfigureMauiHandlers(handlers =>
+                {
+                    handlers.AddHandler(typeof(Map), typeof(MapHandler));
+                })
+                .UseMauiMaps()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

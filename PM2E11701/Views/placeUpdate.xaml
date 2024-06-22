@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E11701.Views.placeUpdate"
+             Title="placeUpdate"
+             BackgroundColor="#fff">
+    <ScrollView>
+
+
+        <VerticalStackLayout Padding="30,0" Spacing="20">
+            <Label
+                Margin="10,100,0,0"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="SITE VISITOR APP" />
+
+            <Label
+                Margin="0,0,0,20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Subtitle"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Imagen Sitio Visitado" />
+
+            <Image
+                x:Name="imgFoto"
+                Margin="0,-30,0,-5"
+                Aspect="AspectFit"
+                HeightRequest="150"
+                HorizontalOptions="CenterAndExpand"
+                Source="avatar.png"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="150" />
+
+            <Button
+                x:Name="btnAgregar"
+                Margin="0,10,0,0"
+                Background="#f6ee00" 
+                TextColor="Black"  
+                FontAttributes="Bold"
+                WidthRequest="120"
+                HeightRequest="45"
+                Clicked="btnAgregar_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Agregar"
+                Text="Agregar" />
+            <HorizontalStackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Label
+                    Margin="0,0,0,10"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Body"
+                    HorizontalOptions="Start"
+                    Text="Latitude:"
+                    VerticalOptions="Center" />
+
+                <Entry
+                    x:Name="txtLatitud"
+                    Margin="25,0,0,10"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Body"
+                    IsEnabled="False"
+                    HorizontalOptions="Center"
+                    Keyboard="Text"
+                    VerticalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+
+            <Label
+                Margin="0,0,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                Text="Longitud:"
+                SemanticProperties.HeadingLevel="Level1"
+                VerticalOptions="Center" />
+
+            <Entry
+                x:Name="txtLongitud"
+                Margin="-85,-70,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="16"
+                IsEnabled="False"
+                HorizontalOptions="Center"
+                Keyboard="Text"
+                VerticalOptions="Start" />
+
+            <Label
+                Margin="0,0,0,10"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                Text="Descripcion:"
+                VerticalOptions="Center" />
+
+            <Entry
+                x:Name="txtDescrip"
+                Margin="-25,-30,20,20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Center"
+                Keyboard="Text"
+                IsEnabled="False"
+                Placeholder="Ingrese la Ciudad Aqui"
+                VerticalOptions="StartAndExpand" />
+
+
+            <Button
+                x:Name="btnGuardar"
+                Margin="0,0,0,0"
+                Background="#71e84d" 
+                TextColor="Black" 
+                FontAttributes="Bold"
+                WidthRequest="120"
+                HeightRequest="50"
+                Clicked="btnGuardar_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Agregar"
+                Text="Actualizar" />
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
