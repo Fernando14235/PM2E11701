@@ -51,6 +51,6 @@ public partial class viewMap : ContentPage
 
     private void btnSalir_Clicked(object sender, EventArgs e)
     {
-        //Navigation.PushAsync(new placeList());
+        Navigation.PushAsync(new placeList());
     }
 }
