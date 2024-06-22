@@ -111,7 +111,6 @@ public partial class MainPage : ContentPage
     private void btnSitios_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new placeList());
-    }
 
     private async void btnAgregar_Clicked(object sender, EventArgs e)
     {
